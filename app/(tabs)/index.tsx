@@ -1,5 +1,6 @@
 import MovieCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
+import TrendingCard from "@/components/TrendingCard";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { fetchMovies } from "@/services/api";
@@ -34,14 +35,9 @@ export default function Index() {
   // console.log("Trending Movies:", trendingMovies);
   // console.log("Movies:", movies);
 
-
   return (
     <View className=" flex-1 bg-primary">
-      <StatusBar
-        barStyle="light-content"
-        translucent={Platform.OS === "android"}
-        backgroundColor="transparent"
-      />
+   
       <Image
         source={images.bg}
         className=" absolute w-full z-0"
@@ -92,9 +88,10 @@ export default function Index() {
                     gap: 26,
                   }}
                   renderItem={({ item, index }) => (
-                    <Text className=" text-white text-sm">{item.title}</Text>
+                    <TrendingCard movie={item} index={index} />
                   )}
                   keyExtractor={(item) => item.movie_id.toString()}
+                  ItemSeparatorComponent={() => <View className="w-4" />}
                 />
               </View>
             )}
