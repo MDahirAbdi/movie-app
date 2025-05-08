@@ -1,5 +1,17 @@
 {
     "id": "HEpnGLxHR",
     "name": "movie-app ",
-    "product": "livechat"
+    "product": "livechat",
+    "blocks": {
+        "authorization": {
+            "clientId": "eb9207a94164270ccef932944f54b285",
+            "type": "javascript_app",
+            "redirectUri": "http://localhost"
+        },
+        "repository": {
+            "provider": "github",
+            "name": "MDahirAbdi/movie-app",
+            "branch": "master"
+        }
+    }
 }
